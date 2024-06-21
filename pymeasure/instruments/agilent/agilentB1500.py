@@ -216,6 +216,13 @@ class AgilentB1500(SCPIUnknownMixin, Instrument):
         (``XE``)"""
         self.write("XE")
 
+    def calibrate(self):
+        """ Send ``CA`` to perform a self calibration instantly."""
+        input("Open Terminals, else you may destroy the DUT!")
+        self.write("CA")
+        self.check_idle()
+        self.check_errors()
+
     @property
     def auto_calibration(self):
         """ Enable/Disable SMU auto-calibration every 30 minutes. (``CM``)
