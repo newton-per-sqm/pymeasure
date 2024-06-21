@@ -218,7 +218,8 @@ class AgilentB1500(SCPIUnknownMixin, Instrument):
 
     def calibrate(self):
         """ Send ``CA`` to perform a self calibration instantly."""
-        input("Open Terminals, else you may destroy the DUT!")
+        print("Calibration will take ~ 30s, set timeout accordingly.")
+        input("Open Terminals, else you may destroy the DUT!, and press Enter.")
         self.write("CA")
         self.check_idle()
         self.check_errors()
