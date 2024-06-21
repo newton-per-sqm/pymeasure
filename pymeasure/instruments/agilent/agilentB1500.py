@@ -109,6 +109,7 @@ class AgilentB1500(SCPIUnknownMixin, Instrument):
         module_names = {
             'B1525A': 'SPGU',
             'B1517A': 'HRSMU',
+            'B1517A/E5288A': 'HRSMU', # Attosense Units
             'B1511A': 'MPSMU',
             'B1511B': 'MPSMU',
             'B1510A': 'HPSMU',
